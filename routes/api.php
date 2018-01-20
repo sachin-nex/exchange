@@ -13,6 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('{coin}/wallet/{wallet}', 'BitgoController@get_wallet_info');
+
+Route::post('wallet/generate', 'BitgoController@generate_wallet');
